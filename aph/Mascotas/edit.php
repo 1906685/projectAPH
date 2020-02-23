@@ -6,32 +6,32 @@ if(isset($_POST['update']))
 {	
 	$id = $_POST['id'];
 	
-        $tipo = $_POST['tipo'];
-	$raza = $_POST['raza'];
+        $identificacion = $_POST['identificacion'];
 	$nombre = $_POST['nombre'];
+	$cargo = $_POST['cargo'];
 
-	if(empty($tipo) || empty($raza) || empty($nombre)) {
+	if(empty($identificacion) || empty($nombre) || empty($cargo)) {
 				
-		if(empty($tipo)) {
+		if(empty($identificacion)) {
 			echo "<font color='red'>Name field is empty.</font><br/>";
 		}
 		
-		if(empty($raza)) {
+		if(empty($nombre)) {
 			echo "<font color='red'>Age field is empty.</font><br/>";
 		}
 		
-		if(empty($nombre)) {
+		if(empty($cargo)) {
 			echo "<font color='red'>Email field is empty.</font><br/>";
 		}		
 	} else {	
 
-		$sql = "UPDATE trabajadores SET tipo=:tipo, raza=:raza, nombre=:nombre WHERE id=:id";
+		$sql = "UPDATE trabajadores SET identificacion=:identificacion, nombre=:nombre, cargo=:cargo WHERE id=:id";
 		$query = $dbConn->prepare($sql);
 				
 		$query->bindparam(':id', $id);
-		$query->bindparam(':tipo', $tipo);
-		$query->bindparam(':raza', $raza);
+		$query->bindparam(':identificacion', $identificacion);
 		$query->bindparam(':nombre', $nombre);
+		$query->bindparam(':cargo', $cargo);
 		$query->execute();
 		
 		
@@ -50,9 +50,9 @@ $query->execute(array(':id' => $id));
 
 while($row = $query->fetch(PDO::FETCH_ASSOC))
 {
-        $tipo = $row['tipo'];
-	$raza = $row['raza'];
+        $identificacion = $row['identificacion'];
 	$nombre = $row['nombre'];
+	$cargo = $row['cargo'];
 }
 ?>
 <html>
@@ -67,16 +67,16 @@ while($row = $query->fetch(PDO::FETCH_ASSOC))
 	<form name="form1" method="post" action="edit.php">
 		<table border="0">
 			<tr> 
-				<td>tipo</td>
-				<td><input type="text" name="tipo" value="<?php echo $tipo;?>"></td>
+				<td>Identificación</td>
+				<td><input type="text" name="identificacion" value="<?php echo $identificacion;?>"></td>
 			</tr>
 			<tr> 
-				<td>raza</td>
-				<td><input type="text" name="raza" value="<?php echo $raza;?>"></td>
-			</tr>
-			<tr> 
-				<td>nombre</td>
+				<td>Nombre</td>
 				<td><input type="text" name="nombre" value="<?php echo $nombre;?>"></td>
+			</tr>
+			<tr> 
+				<td>cargo</td>
+				<td><input type="text" name="cargo" value="<?php echo $cargo;?>"></td>
 			</tr>
 			<tr>
 				<td><input type="hidden" name="id" value=<?php echo $_GET['id'];?>></td>
