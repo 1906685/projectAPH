@@ -3,7 +3,7 @@
 include_once("config.php");
 
 
-$result = $dbConn->query("SELECT * FROM trabajadores ORDER BY id DESC");
+$result = $dbConn->query("SELECT * FROM mascotas ORDER BY id DESC");
 ?>
 
 <html>
