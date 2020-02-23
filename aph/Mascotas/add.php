@@ -9,8 +9,8 @@ include_once("config.php");
 
 if(isset($_POST['Submit'])) {	
 	$tipo = $_POST['tipo'];
-	$raza = $_POST['raza'];al
-	$nombre = $_POST['nombre'];		
+	$raza = $_POST['raza'];
+	$nombre = $_POST['nombre'];
 
 	if(empty($tipo) || empty($raza) || empty($nombre)) {
 				

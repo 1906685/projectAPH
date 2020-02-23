@@ -9,8 +9,8 @@ include_once("config.php");
 
 if(isset($_POST['Submit'])) {	
 	$identificacion = $_POST['identificacion'];
-	$nombre = $_POST['nombre'];al
-	$cargo = $_POST['cargo'];		
+	$nombre = $_POST['nombre'];
+	$cargo = $_POST['cargo'];
 
 	if(empty($identificacion) || empty($nombre) || empty($cargo)) {
 				
