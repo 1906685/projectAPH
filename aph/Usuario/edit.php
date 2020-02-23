@@ -44,7 +44,7 @@ if(isset($_POST['update']))
 $id = $_GET['id'];
 
 
-$sql = "SELECT * FROM usuario WHERE id=:id";
+$sql = "SELECT * FROM alquiler WHERE id=:id";
 $query = $dbConn->prepare($sql);
 $query->execute(array(':id' => $id));
 
@@ -57,7 +57,7 @@ while($row = $query->fetch(PDO::FETCH_ASSOC))
 ?>
 <html>
 <head>	
-	<title>Editar usuario</title>
+	<title>Editar Datos</title>
 </head>
 
 <body>

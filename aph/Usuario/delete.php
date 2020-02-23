@@ -6,7 +6,7 @@ include("config.php");
 $id = $_GET['id'];
 
 //deleting the row from table
-$sql = "DELETE FROM usuario WHERE id=:id";
+$sql = "DELETE FROM alquiler WHERE id=:id";
 $query = $dbConn->prepare($sql);
 $query->execute(array(':id' => $id));
 

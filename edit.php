@@ -31,7 +31,7 @@ if(isset($_POST['update']))
 		$query->bindparam(':id', $id);
 		$query->bindparam(':identificacion', $nombres);
 		$query->bindparam(':nombre', $superpoder);
-		$query->bindparam(':curso', $$identidad));
+		$query->bindparam(':curso', $identidad));
 		$query->execute();
 		
 		

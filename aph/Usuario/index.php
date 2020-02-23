@@ -8,11 +8,11 @@ $result = $dbConn->query("SELECT * FROM alquiler ORDER BY id DESC");
 
 <html>
 <head>	
-	<title>Crear usuario</title>
+	<title>Crear trabajador</title>
 </head>
 
 <body>
-<a href="add.html">Adicionar usuario</a><br/><br/>
+<a href="add.html">Adicionar alquiler</a><br/><br/>
 
 	<table width='80%' border=0>
 
