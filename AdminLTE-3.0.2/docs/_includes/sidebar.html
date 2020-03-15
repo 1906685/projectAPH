@@ -1,5 +1,5 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <a href="{{'index.html' | absolute_url}}" class="brand-link logo-switch">
+    <a href="{{'index1.php' | absolute_url}}" class="brand-link logo-switch">
       <img src="{{'assets/img/logo-xs.png' | absolute_url}}" alt="AdminLTE Docs Logo Small" class="brand-image-xl logo-xs">
       <img src="{{'assets/img/logo-xl.png' | absolute_url}}" alt="AdminLTE Docs Logo Large" class="brand-image-xs logo-xl" style="left: 12px">
     </a>
@@ -16,7 +16,7 @@
             {% endfor %}
 
             <li class="nav-item {% if item.subitems %}has-treeview{% endif %} {% if subitem_active == 'true' %}menu-open{% endif %}">
-              {% if item.url == 'index.html' %}
+              {% if item.url == 'index1.php' %}
                 {% assign item_url = '/' %}
               {% else %}
                 {% assign item_url = '/' | append: item.url %}
